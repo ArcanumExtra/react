@@ -1,0 +1,33 @@
+rules:
+  - id: "avoid-unconditional-input-dom-writes"
+    name: "Avoid unconditional input DOM writes in commit paths"
+    type: llm
+    severity: warning
+    category: "performance"
+    message: "When updating input elements, guard property/attribute assignments so unchanged values are not written on every commit; only write when the relevant value actually changed (with explicit handling for special cases like type/name interactions)."
+    llm:
+      prompt: "When updating input elements, guard property/attribute assignments so unchanged values are not written on every commit; only write when the relevant value actually changed (with explicit handling for special cases like type/name interactions)."
+  - id: "normalize-input-type-before-compare"
+    name: "Normalize input type before change detection"
+    type: llm
+    severity: warning
+    category: "patterns"
+    message: "When comparing input type values against DOM `node.type`, normalize/coerce the incoming type to lowercase before comparison so case differences (for example `\"Text\"` vs `\"text\"`) do not trigger incorrect change detection."
+    llm:
+      prompt: "When comparing input type values against DOM `node.type`, normalize/coerce the incoming type to lowercase before comparison so case differences (for example `\"Text\"` vs `\"text\"`) do not trigger incorrect change detection."
+  - id: "preserve-method-shorthand-semantics-in-compiler-transforms"
+    name: "Preserve method shorthand semantics in compiler transforms"
+    type: llm
+    severity: warning
+    category: "patterns"
+    message: "Do not transform object method shorthand into plain function-valued properties in ways that change JavaScript semantics (such as constructibility or `this` behavior); compiler optimizations must preserve original runtime semantics."
+    llm:
+      prompt: "Do not transform object method shorthand into plain function-valued properties in ways that change JavaScript semantics (such as constructibility or `this` behavior); compiler optimizations must preserve original runtime semantics."
+  - id: "use-capitalized-component-identifiers-in-jsx"
+    name: "Use capitalized identifiers for React components"
+    type: llm
+    severity: warning
+    category: "style"
+    message: "JSX component identifiers must start with an uppercase letter; lowercase or symbol-like identifiers are treated as non-component tags and should not be relied on as component names."
+    llm:
+      prompt: "JSX component identifiers must start with an uppercase letter; lowercase or symbol-like identifiers are treated as non-component tags and should not be relied on as component names."
